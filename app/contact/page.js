@@ -2,19 +2,6 @@
 import React from 'react';
 
 const Contact = () => {
-  const handleOnSubmit = async (e) => {
-    e.preventDefault();
-    const formData = {};
-    Array.from(e.currentTarget.elements).forEach((field) => {
-      if (!field.name) return;
-      formData[field.name] = field.value;
-    });
-    fetch('api/mail', {
-      method: 'post',
-      body: JSON.stringify(formData),
-    });
-    console.log(formData);
-  };
   return (
     <section className="relative text-gray-600 mt-20" id="contact">
       <div className="container flex justify-center px-5 py-12 mx-auto items-cener sm:flex-nowrap">
@@ -25,7 +12,7 @@ const Contact = () => {
           <p className="mb-5 text-center text-purple-900">
             Any questions or remarks ? Just write us a message !
           </p>
-          <form method="post" onSubmit={handleOnSubmit}>
+          <form>
             <div className="relative mb-4">
               <label htmlFor="name" className="text-sm text-gray-600">
                 Name
